@@ -5,17 +5,31 @@ import TopBit from './Components/TopBit'
 import ControlPanel from './Components/ControlPanel'
 
 class App extends Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      rotate: false
+    };
+  }
+
+
+  updateRotate = (rotate) => {
+    this.setState((prevState) => 
+      {
+        return {
+        rotate: !prevState.rotate
+      };
+    });
+  }
+
   render() {
     return (
       <div className="App">
-        {/* <header className="App-header">
-          <img src='Jenn.jpg' className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header> */}
-        <TopBit rotate={false} />
+        <TopBit rotate={this.state.rotate} />
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.        
-          <ControlPanel />
+          <ControlPanel updateRotate={this.updateRotate}
+            rotate={this.state.rotate} />
         </p>
       </div>
     );
