@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TopBit from './Components/TopBit'
+import ControlPanel from './Components/ControlPanel'
 
 class App extends Component {
   render() {
@@ -13,7 +14,8 @@ class App extends Component {
         </header> */}
         <TopBit rotate={false} />
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          To get started, edit <code>src/App.js</code> and save to reload.        
+          <ControlPanel />
         </p>
       </div>
     );
