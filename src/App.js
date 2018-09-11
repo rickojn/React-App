@@ -23,6 +23,15 @@ class App extends Component {
     });
   }
 
+  updateRotate2 = (rotate) => {
+    this.setState((prevState) => 
+      {
+        return {
+        rotate: !prevState.rotate
+      };
+    });
+  }
+
   render() {
     return (
       <div className="App">
