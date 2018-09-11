@@ -15,6 +15,8 @@ it('renders without crashing', () => {
 
 it('use Enzyme', () => {
   const wrapper = shallow(<App/>);
-  console.log('logging ...', wrapper.find('TopBit').getElements())
-  expect(wrapper.find('div')).to.have.lengthOf(1)
+  // console.log('logging ...', wrapper.find('TopBit').getElements())
+  expect(wrapper.find('div')).to.have.lengthOf(2)
+  expect(wrapper.find('TopBit')).to.have.lengthOf(1)
+  expect(wrapper.find('TopBit').props().rotate).to.equal(false)
 });

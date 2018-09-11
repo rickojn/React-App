@@ -27,10 +27,10 @@ class App extends Component {
     return (
       <div className="App">
         <TopBit rotate={this.state.rotate} />
-        <p className="App-intro">
+        <div className="App-intro">
           <ControlPanel updateRotate={this.updateRotate}
             rotate={this.state.rotate} />
-        </p>
+        </div>
       </div>
     );
   }
