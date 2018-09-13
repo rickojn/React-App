@@ -14,7 +14,7 @@ class App extends Component {
   }
 
 
-  updateRotate = (rotate) => {
+  updateRotate = () => {
     this.setState((prevState) => 
       {
         return {
@@ -23,7 +23,7 @@ class App extends Component {
     });
   }
 
-  updateRotate2 = (rotate) => {
+  updateRotate2 = () => {
     this.setState((prevState) => 
       {
         return {
