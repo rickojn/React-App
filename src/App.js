@@ -34,9 +34,9 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div id='d1' className="App">
         <TopBit rotate={this.state.rotate} />
-        <div className="App-intro">
+        <div id='d2' className="App-intro">
           <ControlPanel updateRotate={this.updateRotate}
             rotate={this.state.rotate} />
         </div>
