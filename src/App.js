@@ -10,21 +10,23 @@ class App extends Component {
     super(props);
     this.state = {
       rotate: false
+      // dontRotate: true
     };
   }
 
 
   updateRotate = () => {
-    this.setState((prevState) => 
+    this.setState((prevState) =>
       {
         return {
         rotate: !prevState.rotate
+        // dontRotate: !prevState.dontRotate
       };
     });
   }
 
   updateRotate2 = () => {
-    this.setState((prevState) => 
+    this.setState((prevState) =>
       {
         return {
         rotate: !prevState.rotate
