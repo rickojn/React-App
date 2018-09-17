@@ -24,16 +24,17 @@ describe('When the App component is rendered ...', () =>{
 
   it('the Top Bit rotate flag is set to false', () => {
     expect(wrapper.find('TopBit').props().rotate).to.equal(false)
+    // expect(wrapper.state().rotate).to.equal(false) DONT DO THIS - testing implementation!!!!!
   })
-  
+
   it('the control panel rotate flag prop is set to false', () => {
     expect(wrapper.find('ControlPanel').props().rotate).to.equal(false)
   })
-  
+
   it('the correct function reference is passed down to the control panel', () => {
     expect(wrapper.find('ControlPanel').props().updateRotate).to.equal(wrapper.instance().updateRotate)
   })
-  
+
 })
 
 describe('When the updateRotate function is called on the App component ...', () => {
@@ -41,7 +42,7 @@ describe('When the updateRotate function is called on the App component ...', ()
     const wrapper = shallow(<App />);
     expect(wrapper.find('TopBit').props().rotate).to.equal(false)
     wrapper.instance().updateRotate();
-    // expect(wrapper.state().rotate).to.equal(true) // BAD!!! shouldnt test implementation!
+    // expect(wrapper.state().dontRotate).to.equal(false) // BAD!!! shouldnt test implementation!
     expect(wrapper.find('TopBit').props().rotate).to.equal(true)
     wrapper.instance().updateRotate();
     expect(wrapper.find('TopBit').props().rotate).to.equal(false)
