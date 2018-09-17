@@ -20,7 +20,7 @@ class ControlPanel extends Component {
         })
     }
 
-    updateRotate = (event) => {
+    updateRotateHandler = (event) => {
       this.props.updateRotate()
     }
 
@@ -33,7 +33,7 @@ class ControlPanel extends Component {
           </button>
           {'   '}
           <button id='rotate' title="rotate" disabled={this.state.rotateButtonDisabled}
-            onClick={this.updateRotate}>
+            onClick={this.updateRotateHandler}>
           {this.props.rotate ? 'Stop' : 'Rotate'}
           </button>
         </p>
