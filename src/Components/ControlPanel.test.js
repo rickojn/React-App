@@ -21,7 +21,7 @@ describe('When the Control Panel component renders with rotate flag = false ...'
   })
   it('then the button text is "Rotate"', () => {
     expect(wrapper.find('button#rotate').text()).to.equal('Rotate')
-  })                    
+  })
 })
 
 describe('When the rotate button is clicked ...', () => {
@@ -30,6 +30,7 @@ describe('When the rotate button is clicked ...', () => {
       done()
     }
     const wrapper = shallow(<ControlPanel rotate={false} updateRotate={testUpdateRotate} />)
+    // wrapper.instance().updateRotateHandler()
     wrapper.find('button#rotate').simulate('click');
   })
 })
