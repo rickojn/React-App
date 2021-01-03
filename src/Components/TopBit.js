@@ -5,7 +5,7 @@ const TopBit = (props) => {
     return(
     <header className="App-header">
         <img src='Jenn.jpg' className={props.rotate ? "App-logo" : 'App-logo-dont-rotate'} alt="logo" />
-        <h1 className="App-title">Welcome </h1>
+        <h1 className="App-title">Hi Richard! </h1>
     </header>
     )
 }

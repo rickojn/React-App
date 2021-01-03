@@ -1,50 +1,30 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TopBit from './Components/TopBit'
 import ControlPanel from './Components/ControlPanel'
+import { useState } from 'react';
 
-class App extends Component {
+function App() {
 
-  constructor(props){
-    super(props);
-    this.state = {
-      rotate: false
-      // dontRotate: true
-    };
-  }
+  const [rotate, setRotate] = useState(false);
+
+  const updateRotate = () => {
+    setRotate(!rotate);
+  };
 
 
-  updateRotate = () => {
-    this.setState((prevState) =>
-      {
-        return {
-        rotate: !prevState.rotate
-        // dontRotate: !prevState.dontRotate
-      };
-    });
-  }
 
-  updateRotate2 = () => {
-    this.setState((prevState) =>
-      {
-        return {
-        rotate: !prevState.rotate
-      };
-    });
-  }
-
-  render() {
-    return (
-      <div id='d1' className="App">
-        <TopBit rotate={this.state.rotate} />
-        <div id='d2' className="App-intro">
-          <ControlPanel updateRotate={this.updateRotate}
-            rotate={this.state.rotate} />
-        </div>
+  return (
+    <div id='d1' className="App">
+      <TopBit rotate={rotate} />
+      <div id='d2' className="App-intro">
+        <ControlPanel updateRotate={updateRotate}
+          rotate={rotate} />
       </div>
-    );
-  }
+    </div>
+  );
+
 }
 
 export default App;
