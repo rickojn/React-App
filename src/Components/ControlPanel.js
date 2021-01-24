@@ -1,45 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import '../App.css';
 
 
-class ControlPanel extends Component {
+function ControlPanel (props) {
 
-    constructor(props){
-        super(props)
-        this.state= {
-            rotateButtonDisabled : false
-        }
+
+    const [rotateButtonDisabled, setRotateButtonDisabled] = useState(false);
+
+  const  disableRotateButton = (event) => {
+      setRotateButtonDisabled(!rotateButtonDisabled);
     }
 
-
-    disableRotateButton = (event) => {
-        this.setState((prevState) => {
-            return {
-                rotateButtonDisabled: !prevState.rotateButtonDisabled
-            }
-        })
+  const  updateRotateHandler = (event) => {
+      props.updateRotate()
     }
 
-    updateRotateHandler = (event) => {
-      this.props.updateRotate()
-    }
-
-  render() {
+  
     return (
       <div id='d1' className="App">
         <p id='p1' className="App-intro">
-          <button id='disable' title="disable or enable" onClick={this.disableRotateButton}>
-            {this.state.rotateButtonDisabled ? 'Enable' : 'Disable'}
+          <button id='disable' title="disable or enable" onClick={disableRotateButton}>
+            {rotateButtonDisabled ? 'Enable' : 'Disable'}
           </button>
           {'   '}
-          <button id='rotate' title="rotate" disabled={this.state.rotateButtonDisabled}
-            onClick={this.updateRotateHandler}>
-          {this.props.rotate ? 'Stop' : 'Rotate'}
+          <button id='rotate' title="rotate" disabled={rotateButtonDisabled}
+            onClick={updateRotateHandler}>
+          {props.rotate ? 'Stop' : 'Rotate'}
           </button>
         </p>
       </div>
-    );
-  }
+    );  
 }
 
 export default ControlPanel;
